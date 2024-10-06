@@ -12,16 +12,16 @@ const backend = defineBackend({
   // data,
 });
 
-const customResourcesStack = backend.createStack('MyCustomResourcesForKMS')
+// const customResourcesStack = backend.createStack('MyCustomResourcesForKMS')
 
-const helloWorldKey = new kms.Key(customResourcesStack,'hello world')
-helloWorldKey.addAlias('alias/foo')
+// const helloWorldKey = new kms.Key(customResourcesStack,'hello world')
+// helloWorldKey.addAlias('alias/foo')
 
-// Templated secret with username and password fields
-new secretsmanager.Secret(customResourcesStack, 'TemplatedSecret', {
-  generateSecretString: {
-    secretStringTemplate: JSON.stringify({ username: 'postgres' }),
-    generateStringKey: 'password',
-    excludeCharacters: '/@"',
-  },
-});
+// // Templated secret with username and password fields
+// new secretsmanager.Secret(customResourcesStack, 'TemplatedSecret', {
+//   generateSecretString: {
+//     secretStringTemplate: JSON.stringify({ username: 'postgres' }),
+//     generateStringKey: 'password',
+//     excludeCharacters: '/@"',
+//   },
+// });
