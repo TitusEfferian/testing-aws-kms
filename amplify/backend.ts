@@ -7,8 +7,10 @@ import * as kms from 'aws-cdk-lib/aws-kms'
  * @see https://docs.amplify.aws/react/build-a-backend/ to add storage, functions, and more
  */
 const backend = defineBackend({
+  auth,
+  data,
 });
 
 const customResourcesStack = backend.createStack('MyCustomResourcesForKMS')
 
-new kms.Key(customResourcesStack,'hello world');
+new kms.Key(customResourcesStack,'hello world')
